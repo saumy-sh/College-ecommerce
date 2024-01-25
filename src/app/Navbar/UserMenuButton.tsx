@@ -52,11 +52,11 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
                 Sign Out
               </button>
               <Link href="../myitems">
-                <a>
-                  <button>
-                    My Items
-                  </button>
-                </a>
+                
+                <button>
+                  My Items
+                </button>
+                
               </Link>
             </>
           ) : (
