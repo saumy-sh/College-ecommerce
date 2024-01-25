@@ -51,7 +51,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               <button onClick={() => signOut({ callbackUrl: "/" })}>
                 Sign Out
               </button>
-              <Link href="../myitems">
+              <Link href="/myitems">
                 
                 <button>
                   My Items
