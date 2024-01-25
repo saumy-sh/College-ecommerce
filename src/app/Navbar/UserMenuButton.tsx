@@ -4,6 +4,7 @@ import profilePicPlaceholder from "@/assets/placeholder-profile-pic.jpg";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 interface UserMenuButtonProps {
   session: Session | null;
@@ -11,6 +12,11 @@ interface UserMenuButtonProps {
 
 export default function UserMenuButton({ session }: UserMenuButtonProps) {
   const user = session?.user;
+  const router = useRouter();
+
+  const MyItemsclicked = () => {
+    router.push("../myitems/page.tsx");
+  }
 
   return (
     <div className="dropdown-end dropdown">
@@ -49,7 +55,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               <button onClick={() => signOut({ callbackUrl: "/" })}>
                 Sign Out
               </button>
-              <button onClick={() => console.log("go to my items page")}>
+              <button onClick={() => MyItemsclicked}>
                 My Items
               </button>
             </>
